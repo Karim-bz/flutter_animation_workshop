@@ -8,10 +8,11 @@ class Heart extends StatefulWidget {
 }
 
 class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
+  bool isFav = false;
   AnimationController? _controller;
   Animation? _colorAnimation; // control the color Animation
   Animation<double>? _sizeAnimation; // control the size Animation
-  bool isFav = false;
+  Animation? _curve;
 
   @override
   void initState() {
@@ -22,6 +23,9 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
       duration: const Duration(milliseconds: 300),
       vsync: this,
     );
+
+    // initialise curve Animation
+    _curve = CurvedAnimation(parent: _controller!, curve: Curves.slowMiddle);
 
     // initialise color Tween to change Icon Color
     _colorAnimation = ColorTween(begin: Colors.grey[400], end: Colors.red)
