@@ -27,6 +27,7 @@ linter:
     library_private_types_in_public_api: false
     file_names: false
     no_leading_underscores_for_local_identifiers: false
+    prefer_const_constructors: false
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
